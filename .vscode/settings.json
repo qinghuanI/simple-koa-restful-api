@@ -1,0 +1,8 @@
+{
+  // window
+  "window.zoomLevel": 0,
+
+  // editor UI
+  "editor.fontSize": 16,
+  "editor.tabSize": 2
+}
