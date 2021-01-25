@@ -1,0 +1,9 @@
+{
+  "name": "simple-koa-restful-api",
+  "instances": 1,
+  "script": "./src/bin/index.js",
+  "watch": ["src"],
+  "ignore_watch": ["node_modules"],
+  "error_file": "",
+  "out_file": ""
+}
