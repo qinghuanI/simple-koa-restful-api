@@ -5,6 +5,7 @@ const logger = require('koa-logger');
 const koaBody = require('koa-body');
 const KoaStatic = require('koa-static2');
 const jwt = require('koa-jwt');
+const helmet = require('koa-helmet');
 const router = require('./routes');
 const ErrorRoutesCatch = require('./middleware/ErrorRoutesCatch');
 const ErrorRoute = require('./middleware/ErrorRoute');
@@ -13,6 +14,8 @@ const app = new Koa();
 const JWT_SECRET = 'wqdjkwl1e21FQlk1j2';
 
 app.use(cors());
+
+app.use(helmet());
 app.use(
   koaBody({
     multipart: true,
