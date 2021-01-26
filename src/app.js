@@ -14,7 +14,6 @@ const app = new Koa();
 const JWT_SECRET = 'wqdjkwl1e21FQlk1j2';
 
 app.use(cors());
-
 app.use(helmet());
 app.use(
   koaBody({
