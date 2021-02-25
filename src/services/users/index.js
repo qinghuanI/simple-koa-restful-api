@@ -1,3 +1,3 @@
 class UsersServices {}
 
-module.exports = new UsersServices();
+export default new UsersServices();

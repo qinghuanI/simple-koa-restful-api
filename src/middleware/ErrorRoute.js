@@ -1,4 +1,4 @@
-module.exports = function () {
+export default function () {
   return function (ctx, next) {
     console.log('ctx.status =', ctx.status);
     switch (ctx.status) {
@@ -8,4 +8,4 @@ module.exports = function () {
     }
     return next();
   };
-};
+}

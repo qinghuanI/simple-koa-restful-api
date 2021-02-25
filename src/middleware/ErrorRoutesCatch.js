@@ -1,4 +1,4 @@
-module.exports = function () {
+export default function () {
   return function (ctx, next) {
     return next().catch(err => {
       switch (err.status) {
@@ -18,4 +18,4 @@ module.exports = function () {
       }
     });
   };
-};
+}

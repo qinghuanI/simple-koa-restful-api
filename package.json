@@ -4,7 +4,7 @@
   "description": "a simple restful api server based on koa2",
   "main": "index.js",
   "scripts": {
-    "start": "node ./src/bin/index.js",
+    "start": "node ./bin/index.js && node ./dist/main.js",
     "cspell": "cspell 'src/**/*.{js}'",
     "lint:fix": "eslint --fix --ext .js ."
   },
@@ -29,6 +29,7 @@
   },
   "devDependencies": {
     "cspell": "^5.2.1",
+    "esbuild": "^0.8.52",
     "eslint": "^7.18.0",
     "eslint-config-standard": "^16.0.2",
     "eslint-plugin-import": "^2.22.1",

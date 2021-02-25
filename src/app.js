@@ -1,14 +1,15 @@
-const path = require('path');
-const Koa = require('koa');
-const cors = require('koa-cors');
-const logger = require('koa-logger');
-const koaBody = require('koa-body');
-const KoaStatic = require('koa-static2');
-const jwt = require('koa-jwt');
-const helmet = require('koa-helmet');
-const router = require('./routes');
-const ErrorRoutesCatch = require('./middleware/ErrorRoutesCatch');
-const ErrorRoute = require('./middleware/ErrorRoute');
+import path from 'path';
+import Koa from 'koa';
+import cors from 'koa-cors';
+import logger from 'koa-logger';
+import koaBody from 'koa-body';
+import KoaStatic from 'koa-static2';
+import jwt from 'koa-jwt';
+import helmet from 'koa-helmet';
+import router from './routes';
+import ErrorRoutesCatch from './middleware/ErrorRoutesCatch';
+import ErrorRoute from './middleware/ErrorRoute';
+
 const app = new Koa();
 
 const JWT_SECRET = 'wqdjkwl1e21FQlk1j2';
@@ -31,4 +32,4 @@ app.use(KoaStatic('assets', path.resolve(__dirname, 'assets')));
 app.use(logger());
 app.use(router.routes()).use(router.allowedMethods()).use(ErrorRoute());
 
-module.exports = app;
+export default app;

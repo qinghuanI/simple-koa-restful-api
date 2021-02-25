@@ -1,4 +1,4 @@
-const jwt = require('jwt-simple');
+import jwt from 'jwt-simple';
 
 const JWT_SECRET = 'wqdjkwl1e21FQlk1j2';
 
@@ -16,4 +16,4 @@ class LoginController {
   }
 }
 
-module.exports = new LoginController();
+export default new LoginController();

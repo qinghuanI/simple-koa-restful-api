@@ -1,22 +1,28 @@
-const yaml = require('js-yaml');
-const fs = require('fs');
-const path = require('path');
+// TODO: support config yaml
+// import yaml from 'js-yaml';
+// import fs from 'fs';
+// import path from 'path';
 
-const app = require('../app');
+import app from '../app';
 
-let config;
-try {
-  config = yaml.load(
-    fs.readFileSync(path.join(__dirname, '..', 'config/index.yaml'), 'utf8')
-  );
-} catch (e) {
-  console.log(e);
-}
+// let config;
+// try {
+//   config = yaml.load(
+//     fs.readFileSync(path.join(__dirname, '..', 'config/index.yaml'), 'utf8')
+//   );
+// } catch (e) {
+//   console.log(e);
+// }
 
-app.listen(config.PORT, err => {
+const CONFIG = {
+  PORT: '3001',
+  HOST: 'localhost'
+};
+
+app.listen(CONFIG.PORT, err => {
   if (err) {
     throw err;
   }
 
-  console.log(`http server is running at ${config.HOST}:${config.PORT}`);
+  console.log(`http server is running at ${CONFIG.HOST}:${CONFIG.PORT}`);
 });

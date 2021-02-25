@@ -1,12 +1,13 @@
-const Router = require('koa-router');
-const router = new Router();
+import Router from 'koa-router';
 
-const LoginController = require('./login');
-const UsersController = require('./users');
+import LoginController from './login';
+import UsersController from './users';
+
+const router = new Router();
 
 router.get('/login', LoginController.get);
 router.get('/', UsersController.get);
 router.post('/users', UsersController.post);
 router.get('/users', UsersController.get);
 
-module.exports = router;
+export default router;

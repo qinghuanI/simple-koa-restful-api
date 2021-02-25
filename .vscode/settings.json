@@ -1,8 +1,94 @@
 {
   // window
-  "window.zoomLevel": 0,
+  "window.zoomLevel": 0.3,
 
   // editor UI
-  "editor.fontSize": 16,
-  "editor.tabSize": 2
+  "editor.fontSize": 20,
+  "editor.tabSize": 2,
+  "editor.formatOnType": true,
+  "editor.fontWeight": "500",
+  "editor.formatOnSave": true,
+  "editor.suggestSelection": "first",
+  "editor.wordWrap": "on",
+
+  // "editor.wrappingColumn": 120,
+  "editor.codeActionsOnSave": {
+    "source.fixAll": true,
+    "source.fixAll.eslint": true,
+    "source.fixAll.markdownlint": true,
+    "source.fixAll.stylelint": true
+  },
+
+  // javascript
+  "javascript.format.insertSpaceBeforeFunctionParenthesis": true,
+  "javascript.suggestionActions.enabled": false,
+
+  // files
+  "files.autoSave": "afterDelay",
+
+  // search
+  "search.exclude": {
+    "**/node_modules": true,
+    "**/bower_components": true,
+    "**/*.code-search": true,
+    "yarn.lock": true
+  },
+
+  //  ESLint
+  // "eslint.enable": true,
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "[javascript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.formatOnSave": true
+  },
+  "eslint.options": {
+    "extensions": [".ts", ".tsx"]
+  },
+  "eslint.validate": ["javascript", "javascriptreact", "vue", ".ts", ".tsx"],
+  "eslint.alwaysShowStatus": true,
+
+  // prettier
+  "prettier.enable": true,
+  "prettier.requireConfig": false,
+  "prettier.resolveGlobalModules": true,
+  "prettier.tabWidth": 2,
+  "prettier.semi": true,
+  "prettier.singleQuote": true,
+  "prettier.arrowParens": "avoid",
+  "prettier.bracketSpacing": true,
+  "prettier.trailingComma": "none",
+  "prettier.jsxBracketSameLine": false,
+
+  // cspell
+  "cSpell.language": "en",
+  "cSpell.enabled": true,
+  "cSpell.enableFiletypes": [
+    "css",
+    "git-commit",
+    "go",
+    "html",
+    "javascriptreact",
+    "json",
+    "jsx-tags",
+    "less",
+    "markdown",
+    "pug",
+    "python",
+    "sass",
+    "scss",
+    "text",
+    "vue",
+    "yaml"
+  ],
+  "cSpell.ignorePaths": [
+    "node_modules", // this will ignore anything the node_modules directory
+    "**/node_modules", // the same for this one
+    "**/node_modules/**", // the same for this one
+    "node_modules/**", // Doesn't currently work due to how the current working directory is determined.
+    "vscode-extension", //
+    ".git", // Ignore the .git directory
+    "*.dll", // Ignore all .dll files.
+    "**/*.dll" // Ignore all .dll files
+  ],
+  "cSpell.showStatus": true
 }
