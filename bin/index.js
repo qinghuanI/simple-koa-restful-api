@@ -2,14 +2,20 @@ const path = require('path');
 
 const resolve = dir => path.resolve(__dirname, '..', dir);
 
-require('esbuild')
-  .build({
-    entryPoints: [resolve('src/bin/index.js')],
-    bundle: true,
-    platform: 'node',
-    target: ['es2020'],
-    minify: true,
-    errorLimit: 0,
-    outfile: resolve('dist/main.js')
-  })
-  .catch(() => process.exit(1));
+(async () => {
+  const { startService } = require('esbuild');
+  const service = await startService();
+
+  try {
+    await service.build({
+      entryPoints: [resolve('src/bin/index.js')],
+      outfile: resolve('dist/main.js'),
+      minify: true,
+      bundle: true,
+      platform: 'node',
+      target: ['es2020']
+    });
+  } finally {
+    service.stop();
+  }
+})();
